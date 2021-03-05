@@ -25,7 +25,20 @@ def left_factoring(grm):
 				fac=p[0:mi]
 				grm[key][c]=p[mi:]
 				c=c+1	
-			grm.update({key+"'":[fac]})
+			nlen=len(fac)
+			for i in range (nlen):
+				fac[i].join(key+"'")
+			grm.update({key:[fac]})
+			nlen=len(lis)
+			for i in range (nlen):
+				lis[i].join(key+"'")
+			grm.update({key+"'":[lis]})
+	# nVar = key+"'"
+
+	# lenr = len(grm)
+
+	# for i in range(lenr):grm.append(nVar)
+
 	print (grm)
 grammar = {}
 lis = list()
@@ -37,6 +50,7 @@ for i in range(0,le):
 	lis = list()
 	for i in range(0,l):
 		lis.append(input())
+		
 	grammar.update({key:lis})
 
 print ("the given grammar\n",grammar)

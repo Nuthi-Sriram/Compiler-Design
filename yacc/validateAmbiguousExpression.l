@@ -1,5 +1,6 @@
 %{
     #include"y.tab.h"
+    #include<stdlib.h>
 %}
 
 /*definted section*/

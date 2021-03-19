@@ -444,12 +444,10 @@ char *yytext;
 #line 1 "validateAmbiguousExpression.l"
 #line 2 "validateAmbiguousExpression.l"
     #include"y.tab.h"
-    extern yylval;
-    // comment we need not write #include<stdio.h> here as we are
-//not using any printf statement.
-#line 451 "lex.yy.c"
+    #include<stdlib.h>
+#line 449 "lex.yy.c"
 /*definted section*/
-#line 453 "lex.yy.c"
+#line 451 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -666,9 +664,9 @@ YY_DECL
 		}
 
 	{
-#line 10 "validateAmbiguousExpression.l"
+#line 8 "validateAmbiguousExpression.l"
 
-#line 672 "lex.yy.c"
+#line 670 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -727,36 +725,36 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 11 "validateAmbiguousExpression.l"
-{yylval=atoi(yytext); return num;}
+#line 9 "validateAmbiguousExpression.l"
+{yylval=atoi(yytext); return num;}   //to send yacc as token integer
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 12 "validateAmbiguousExpression.l"
-{return id;}
+#line 10 "validateAmbiguousExpression.l"
+{return id;}                      //to send the integer as a token integer
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 13 "validateAmbiguousExpression.l"
+#line 11 "validateAmbiguousExpression.l"
 ;
 	YY_BREAK
 case 4:
 /* rule 4 can match eol */
 YY_RULE_SETUP
-#line 14 "validateAmbiguousExpression.l"
+#line 12 "validateAmbiguousExpression.l"
 {return 0;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 15 "validateAmbiguousExpression.l"
+#line 13 "validateAmbiguousExpression.l"
 {return yytext[0];}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 16 "validateAmbiguousExpression.l"
+#line 14 "validateAmbiguousExpression.l"
 ECHO;
 	YY_BREAK
-#line 760 "lex.yy.c"
+#line 758 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1761,5 +1759,5 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 16 "validateAmbiguousExpression.l"
+#line 14 "validateAmbiguousExpression.l"
 

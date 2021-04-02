@@ -11,7 +11,6 @@
 %%
 [0-9]+ {
     yylval=atoi(yytext); 
-    printf("%d yylval \n", yylval);
     return num;}
 
 [\t]+ ;

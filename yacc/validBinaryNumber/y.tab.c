@@ -1093,8 +1093,8 @@ yyreduce:
 #line 14 "validBinaryNumber.y"
    {
     flag=1;
-    temp=num;
-    printf("%d \n",num);
+    temp=yyval;
+    printf("%d \n",temp);
     while(temp!=0){
         rem=temp%10;
         // printf("%d+ val",rem);

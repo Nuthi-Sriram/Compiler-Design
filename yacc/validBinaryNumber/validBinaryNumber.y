@@ -13,13 +13,13 @@ int temp;
 
 S:E{
     flag=1;
-    temp=num;
-    printf("%d \n",num);
+    temp=$$;
+    // printf("%d \n",temp);
     while(temp!=0){
         rem=temp%10;
         // printf("%d+ val",rem);
         if(rem >1 || rem < 0){
-            printf("test");
+            // printf("test");
             flag=0;
         }
         temp=temp/10;

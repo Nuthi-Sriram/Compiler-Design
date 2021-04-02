@@ -526,7 +526,7 @@ static const yytype_int8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    18,    18,    22,    23,    24,    26,    27,    28,    30
+       0,    19,    19,    24,    25,    26,    28,    29,    30,    32
 };
 #endif
 
@@ -1099,58 +1099,59 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* S: E  */
-#line 18 "evaluateUnambiguousArithmeticExpression.y"
+#line 19 "evaluateUnambiguousArithmeticExpression.y"
             {
+        printf("%d", num);
                 printf("Result: %d\n", yyval);
                 return 0;
              }
-#line 1108 "y.tab.c"
+#line 1109 "y.tab.c"
     break;
 
   case 3: /* E: E '+' T  */
-#line 22 "evaluateUnambiguousArithmeticExpression.y"
+#line 24 "evaluateUnambiguousArithmeticExpression.y"
              { yyval = yyvsp[-2] + yyvsp[0]; }
-#line 1114 "y.tab.c"
+#line 1115 "y.tab.c"
     break;
 
   case 4: /* E: E '-' T  */
-#line 23 "evaluateUnambiguousArithmeticExpression.y"
+#line 25 "evaluateUnambiguousArithmeticExpression.y"
               { yyval = yyvsp[-2] - yyvsp[0]; }
-#line 1120 "y.tab.c"
+#line 1121 "y.tab.c"
     break;
 
   case 5: /* E: T  */
-#line 24 "evaluateUnambiguousArithmeticExpression.y"
+#line 26 "evaluateUnambiguousArithmeticExpression.y"
                 { yyval = yyvsp[0]; }
-#line 1126 "y.tab.c"
+#line 1127 "y.tab.c"
     break;
 
   case 6: /* T: T '*' F  */
-#line 26 "evaluateUnambiguousArithmeticExpression.y"
+#line 28 "evaluateUnambiguousArithmeticExpression.y"
                 { yyval = yyvsp[-2] * yyvsp[0]; }
-#line 1132 "y.tab.c"
+#line 1133 "y.tab.c"
     break;
 
   case 7: /* T: T '/' F  */
-#line 27 "evaluateUnambiguousArithmeticExpression.y"
+#line 29 "evaluateUnambiguousArithmeticExpression.y"
                     { yyval = yyvsp[-2] / yyvsp[0]; }
-#line 1138 "y.tab.c"
+#line 1139 "y.tab.c"
     break;
 
   case 8: /* T: F  */
-#line 28 "evaluateUnambiguousArithmeticExpression.y"
+#line 30 "evaluateUnambiguousArithmeticExpression.y"
                 { yyval = yyvsp[0]; }
-#line 1144 "y.tab.c"
+#line 1145 "y.tab.c"
     break;
 
   case 9: /* F: num  */
-#line 30 "evaluateUnambiguousArithmeticExpression.y"
+#line 32 "evaluateUnambiguousArithmeticExpression.y"
                 { yyval = yyvsp[0]; }
-#line 1150 "y.tab.c"
+#line 1151 "y.tab.c"
     break;
 
 
-#line 1154 "y.tab.c"
+#line 1155 "y.tab.c"
 
       default: break;
     }
@@ -1344,7 +1345,7 @@ yyreturn:
   return yyresult;
 }
 
-#line 32 "evaluateUnambiguousArithmeticExpression.y"
+#line 34 "evaluateUnambiguousArithmeticExpression.y"
 
 
 int main(){

@@ -67,7 +67,7 @@
 
 
 /* First part of user prologue.  */
-#line 6 "evaluateUnambiguousArithmeticExpression.y"
+#line 4 "evaluateAmbiguousArithmeticExpression.y"
 
     #include<stdio.h>
     #include<stdlib.h>
@@ -154,11 +154,11 @@ enum yysymbol_kind_t
   YYSYMBOL_6_ = 6,                         /* '-'  */
   YYSYMBOL_7_ = 7,                         /* '*'  */
   YYSYMBOL_8_ = 8,                         /* '/'  */
-  YYSYMBOL_YYACCEPT = 9,                   /* $accept  */
-  YYSYMBOL_S = 10,                         /* S  */
-  YYSYMBOL_E = 11,                         /* E  */
-  YYSYMBOL_T = 12,                         /* T  */
-  YYSYMBOL_F = 13                          /* F  */
+  YYSYMBOL_9_ = 9,                         /* '('  */
+  YYSYMBOL_10_ = 10,                       /* ')'  */
+  YYSYMBOL_YYACCEPT = 11,                  /* $accept  */
+  YYSYMBOL_S = 12,                         /* S  */
+  YYSYMBOL_E = 13                          /* E  */
 };
 typedef enum yysymbol_kind_t yysymbol_kind_t;
 
@@ -466,18 +466,18 @@ union yyalloc
 #endif /* !YYCOPY_NEEDED */
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  6
+#define YYFINAL  7
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   9
+#define YYLAST   19
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  9
+#define YYNTOKENS  11
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  5
+#define YYNNTS  3
 /* YYNRULES -- Number of rules.  */
 #define YYNRULES  9
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  15
+#define YYNSTATES  17
 
 /* YYMAXUTOK -- Last valid token kind.  */
 #define YYMAXUTOK   259
@@ -498,7 +498,7 @@ static const yytype_int8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     7,     5,     2,     6,     2,     8,     2,     2,
+       9,    10,     7,     5,     2,     6,     2,     8,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
@@ -526,7 +526,7 @@ static const yytype_int8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    18,    18,    22,    23,    24,    26,    27,    28,    30
+       0,    16,    16,    20,    21,    22,    23,    24,    25,    26
 };
 #endif
 
@@ -543,7 +543,7 @@ static const char *yysymbol_name (yysymbol_kind_t yysymbol) YY_ATTRIBUTE_UNUSED;
 static const char *const yytname[] =
 {
   "\"end of file\"", "error", "\"invalid token\"", "num", "id", "'+'",
-  "'-'", "'*'", "'/'", "$accept", "S", "E", "T", "F", YY_NULLPTR
+  "'-'", "'*'", "'/'", "'('", "')'", "$accept", "S", "E", YY_NULLPTR
 };
 
 static const char *
@@ -558,11 +558,12 @@ yysymbol_name (yysymbol_kind_t yysymbol)
    (internal) symbol number NUM (which must be that of a token).  */
 static const yytype_int16 yytoknum[] =
 {
-       0,   256,   257,   258,   259,    43,    45,    42,    47
+       0,   256,   257,   258,   259,    43,    45,    42,    47,    40,
+      41
 };
 #endif
 
-#define YYPACT_NINF (-6)
+#define YYPACT_NINF (-7)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
@@ -576,8 +577,8 @@ static const yytype_int16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-       4,    -6,     2,    -5,    -4,    -6,    -6,     4,     4,     4,
-       4,    -4,    -4,    -6,    -6
+       0,    -7,    -7,     0,    14,    11,     5,    -7,     0,     0,
+       0,     0,    -7,    -6,    -6,    -7,    -7
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -585,20 +586,20 @@ static const yytype_int8 yypact[] =
      means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-       0,     9,     0,     2,     5,     8,     1,     0,     0,     0,
-       0,     3,     4,     6,     7
+       0,     9,     8,     0,     0,     2,     0,     1,     0,     0,
+       0,     0,     7,     3,     4,     5,     6
 };
 
   /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-      -6,    -6,    -6,    -2,    -1
+      -7,    -7,    -3
 };
 
   /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     2,     3,     4,     5
+      -1,     4,     5
 };
 
   /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -606,32 +607,34 @@ static const yytype_int8 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-       7,     8,     6,     9,    10,    11,    12,     1,    13,    14
+       6,    10,    11,     1,     2,    13,    14,    15,    16,     3,
+       8,     9,    10,    11,     7,    12,     8,     9,    10,    11
 };
 
 static const yytype_int8 yycheck[] =
 {
-       5,     6,     0,     7,     8,     7,     8,     3,     9,    10
+       3,     7,     8,     3,     4,     8,     9,    10,    11,     9,
+       5,     6,     7,     8,     0,    10,     5,     6,     7,     8
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
      symbol of state STATE-NUM.  */
 static const yytype_int8 yystos[] =
 {
-       0,     3,    10,    11,    12,    13,     0,     5,     6,     7,
-       8,    12,    12,    13,    13
+       0,     3,     4,     9,    12,    13,    13,     0,     5,     6,
+       7,     8,    10,    13,    13,    13,    13
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_int8 yyr1[] =
 {
-       0,     9,    10,    11,    11,    11,    12,    12,    12,    13
+       0,    11,    12,    13,    13,    13,    13,    13,    13,    13
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
 static const yytype_int8 yyr2[] =
 {
-       0,     2,     1,     3,     3,     1,     3,     3,     1,     1
+       0,     2,     1,     3,     3,     3,     3,     3,     1,     1
 };
 
 
@@ -1099,58 +1102,58 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* S: E  */
-#line 18 "evaluateUnambiguousArithmeticExpression.y"
+#line 16 "evaluateAmbiguousArithmeticExpression.y"
             {
                 printf("Result: %d\n", yyval);
                 return 0;
              }
-#line 1108 "y.tab.c"
+#line 1111 "y.tab.c"
     break;
 
-  case 3: /* E: E '+' T  */
-#line 22 "evaluateUnambiguousArithmeticExpression.y"
-             { yyval = yyvsp[-2] + yyvsp[0]; }
-#line 1114 "y.tab.c"
+  case 3: /* E: E '+' E  */
+#line 20 "evaluateAmbiguousArithmeticExpression.y"
+               { yyval = yyvsp[-2] + yyvsp[0]; }
+#line 1117 "y.tab.c"
     break;
 
-  case 4: /* E: E '-' T  */
-#line 23 "evaluateUnambiguousArithmeticExpression.y"
-              { yyval = yyvsp[-2] - yyvsp[0]; }
-#line 1120 "y.tab.c"
+  case 4: /* E: E '-' E  */
+#line 21 "evaluateAmbiguousArithmeticExpression.y"
+             { yyval = yyvsp[-2] - yyvsp[0]; }
+#line 1123 "y.tab.c"
     break;
 
-  case 5: /* E: T  */
-#line 24 "evaluateUnambiguousArithmeticExpression.y"
-                { yyval = yyvsp[0]; }
-#line 1126 "y.tab.c"
+  case 5: /* E: E '*' E  */
+#line 22 "evaluateAmbiguousArithmeticExpression.y"
+             { yyval = yyvsp[-2] * yyvsp[0]; }
+#line 1129 "y.tab.c"
     break;
 
-  case 6: /* T: T '*' F  */
-#line 26 "evaluateUnambiguousArithmeticExpression.y"
-                { yyval = yyvsp[-2] * yyvsp[0]; }
-#line 1132 "y.tab.c"
+  case 6: /* E: E '/' E  */
+#line 23 "evaluateAmbiguousArithmeticExpression.y"
+             { yyval = yyvsp[-2] / yyvsp[0]; }
+#line 1135 "y.tab.c"
     break;
 
-  case 7: /* T: T '/' F  */
-#line 27 "evaluateUnambiguousArithmeticExpression.y"
-                    { yyval = yyvsp[-2] / yyvsp[0]; }
-#line 1138 "y.tab.c"
+  case 7: /* E: '(' E ')'  */
+#line 24 "evaluateAmbiguousArithmeticExpression.y"
+                 { yyval = yyvsp[-1]; }
+#line 1141 "y.tab.c"
     break;
 
-  case 8: /* T: F  */
-#line 28 "evaluateUnambiguousArithmeticExpression.y"
-                { yyval = yyvsp[0]; }
-#line 1144 "y.tab.c"
+  case 8: /* E: id  */
+#line 25 "evaluateAmbiguousArithmeticExpression.y"
+                 { yyval = yyvsp[0]; }
+#line 1147 "y.tab.c"
     break;
 
-  case 9: /* F: num  */
-#line 30 "evaluateUnambiguousArithmeticExpression.y"
-                { yyval = yyvsp[0]; }
-#line 1150 "y.tab.c"
+  case 9: /* E: num  */
+#line 26 "evaluateAmbiguousArithmeticExpression.y"
+                 { yyval = yyvsp[0]; }
+#line 1153 "y.tab.c"
     break;
 
 
-#line 1154 "y.tab.c"
+#line 1157 "y.tab.c"
 
       default: break;
     }
@@ -1344,11 +1347,11 @@ yyreturn:
   return yyresult;
 }
 
-#line 32 "evaluateUnambiguousArithmeticExpression.y"
+#line 28 "evaluateAmbiguousArithmeticExpression.y"
 
 
 int main(){
-    printf("enter the number \n");
+    printf("enter the expression \n");
     yyparse();
 }
 

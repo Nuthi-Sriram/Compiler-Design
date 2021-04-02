@@ -371,7 +371,7 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    2,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    4,    4,    4,
         4,    4,    4,    4,    4,    4,    4,    1,    1,    1,
         1,    1,    1,    1,    5,    5,    5,    5,    5,    5,
@@ -441,12 +441,12 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "validateAmbiguousExpression.l"
-#line 2 "validateAmbiguousExpression.l"
-    #include"y.tab.h"
-    #include<stdlib.h>
-#line 449 "lex.yy.c"
-/*definted section*/
+#line 1 "evaluateUnambiguousArithmeticExpression.l"
+#line 2 "evaluateUnambiguousArithmeticExpression.l"
+    /* Definition section*/
+    #include "y.tab.h"
+    extern yylval;
+#line 450 "lex.yy.c"
 #line 451 "lex.yy.c"
 
 #define INITIAL 0
@@ -664,7 +664,7 @@ YY_DECL
 		}
 
 	{
-#line 8 "validateAmbiguousExpression.l"
+#line 7 "evaluateUnambiguousArithmeticExpression.l"
 
 #line 670 "lex.yy.c"
 
@@ -725,36 +725,38 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 9 "validateAmbiguousExpression.l"
-{yylval=atoi(yytext); return num;}   //to send yacc as token integer
+#line 8 "evaluateUnambiguousArithmeticExpression.l"
+{
+    yylval=atoi(yytext);
+    return num;} //num is a token that will be identified by lex and given to the corresponding YACC file.
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 10 "validateAmbiguousExpression.l"
-{return id;}                      //to send the integer as a token integer
+#line 12 "evaluateUnambiguousArithmeticExpression.l"
+{ return id; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 11 "validateAmbiguousExpression.l"
-;
+#line 13 "evaluateUnambiguousArithmeticExpression.l"
+;  /*For skipping whitespaces*/
 	YY_BREAK
 case 4:
 /* rule 4 can match eol */
 YY_RULE_SETUP
-#line 12 "validateAmbiguousExpression.l"
-{return 0;}
+#line 15 "evaluateUnambiguousArithmeticExpression.l"
+{ return 0; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 13 "validateAmbiguousExpression.l"
-{return yytext[0];}
+#line 16 "evaluateUnambiguousArithmeticExpression.l"
+{ return yytext[0]; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 14 "validateAmbiguousExpression.l"
+#line 17 "evaluateUnambiguousArithmeticExpression.l"
 ECHO;
 	YY_BREAK
-#line 758 "lex.yy.c"
+#line 760 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1759,5 +1761,5 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 14 "validateAmbiguousExpression.l"
+#line 17 "evaluateUnambiguousArithmeticExpression.l"
 

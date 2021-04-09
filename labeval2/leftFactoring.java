@@ -11,9 +11,7 @@ import java.io.*;
 public class leftFactoring {
     public static String cfg_Left_factored = "";
 
-    public static String cfg = ""; // you can add more productions by
-                                                                                  // only adding \n at the end of the
-                                                                                  // productions.
+    public static String cfg = ""; 
     public static String Not_LF = "";
 
     public static boolean left_factoring = false;
@@ -36,6 +34,17 @@ public class leftFactoring {
         cfg=bs.toString();
         System.out.println(
                 "Context free grammar is \n" + cfg + "\n ----------------------------------------------------------");
+        bs=new StringBuilder();
+        prods[0]=prods[0].replace("assign-stmt","identifier:=exp");
+        prods[0]=prods[0].replace("call-stmt","identifier(exp-list)");
+        bs=new StringBuilder();
+        for(int i=0;i<noprod;i++){
+            bs.append(prods[i]);
+            bs.append("\n");
+        }
+        cfg=bs.toString();
+        System.out.println(cfg);
+        cfg="statement--> identifier := exp | identifier (exp-list) | other\n";
         check_factor(cfg);
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println("The result of left factoring is \n"); // productions that don't need to be left factored

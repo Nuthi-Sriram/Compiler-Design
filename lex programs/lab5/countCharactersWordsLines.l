@@ -8,7 +8,7 @@
 .  {++num_char;}
 -1 return 0;    //for terminating using -1 in the terminal
 %%
-int wwrap(){
+int wrap(){
     return 1;
 }
 int main(void){

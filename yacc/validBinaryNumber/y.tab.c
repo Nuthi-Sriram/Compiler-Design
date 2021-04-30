@@ -98,10 +98,7 @@ int temp;
 #  endif
 # endif
 
-/* Use api.header.include to #include this header
-   instead of duplicating it here.  */
-#ifndef YY_YY_Y_TAB_H_INCLUDED
-# define YY_YY_Y_TAB_H_INCLUDED
+
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -141,7 +138,7 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_Y_TAB_H_INCLUDED  */
+
 /* Symbol kind.  */
 enum yysymbol_kind_t
 {
@@ -1113,17 +1110,17 @@ yyreduce:
     }
     return 0;
 }
-#line 1117 "y.tab.c"
+#line 1114 "y.tab.c"
     break;
 
   case 3: /* E: num  */
 #line 37 "validBinaryNumber.y"
         { yyval = yyvsp[0]; }
-#line 1123 "y.tab.c"
+#line 1120 "y.tab.c"
     break;
 
 
-#line 1127 "y.tab.c"
+#line 1124 "y.tab.c"
 
       default: break;
     }

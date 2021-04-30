@@ -95,10 +95,7 @@
 #  endif
 # endif
 
-/* Use api.header.include to #include this header
-   instead of duplicating it here.  */
-#ifndef YY_YY_Y_TAB_H_INCLUDED
-# define YY_YY_Y_TAB_H_INCLUDED
+
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -140,7 +137,7 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_Y_TAB_H_INCLUDED  */
+
 /* Symbol kind.  */
 enum yysymbol_kind_t
 {
@@ -1107,53 +1104,53 @@ yyreduce:
                 printf("Result: %d\n", yyval);
                 return 0;
              }
-#line 1111 "y.tab.c"
+#line 1108 "y.tab.c"
     break;
 
   case 3: /* E: E '+' E  */
 #line 20 "evaluateAmbiguousArithmeticExpression.y"
                { yyval = yyvsp[-2] + yyvsp[0]; }
-#line 1117 "y.tab.c"
+#line 1114 "y.tab.c"
     break;
 
   case 4: /* E: E '-' E  */
 #line 21 "evaluateAmbiguousArithmeticExpression.y"
              { yyval = yyvsp[-2] - yyvsp[0]; }
-#line 1123 "y.tab.c"
+#line 1120 "y.tab.c"
     break;
 
   case 5: /* E: E '*' E  */
 #line 22 "evaluateAmbiguousArithmeticExpression.y"
              { yyval = yyvsp[-2] * yyvsp[0]; }
-#line 1129 "y.tab.c"
+#line 1126 "y.tab.c"
     break;
 
   case 6: /* E: E '/' E  */
 #line 23 "evaluateAmbiguousArithmeticExpression.y"
              { yyval = yyvsp[-2] / yyvsp[0]; }
-#line 1135 "y.tab.c"
+#line 1132 "y.tab.c"
     break;
 
   case 7: /* E: '(' E ')'  */
 #line 24 "evaluateAmbiguousArithmeticExpression.y"
                  { yyval = yyvsp[-1]; }
-#line 1141 "y.tab.c"
+#line 1138 "y.tab.c"
     break;
 
   case 8: /* E: id  */
 #line 25 "evaluateAmbiguousArithmeticExpression.y"
                  { yyval = yyvsp[0]; }
-#line 1147 "y.tab.c"
+#line 1144 "y.tab.c"
     break;
 
   case 9: /* E: num  */
 #line 26 "evaluateAmbiguousArithmeticExpression.y"
                  { yyval = yyvsp[0]; }
-#line 1153 "y.tab.c"
+#line 1150 "y.tab.c"
     break;
 
 
-#line 1157 "y.tab.c"
+#line 1154 "y.tab.c"
 
       default: break;
     }

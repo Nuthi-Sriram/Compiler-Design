@@ -1303,6 +1303,6 @@ int main(){
 
 //if error occurred making use of the inbuilt library
 int yyerror(char *s){
-    printf("\n Expressoin is invalid");
+    printf("\n Expression is invalid");
     exit(0);
 }
